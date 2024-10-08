@@ -9,8 +9,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Contenido del TEST
 
 Cuenta con 2 usuarios 
-test = que no permite ver el detalle del pokemo en la table que se presenta al iniciar sesion
-testAdmin tiene acceso al detalle del pokemos
+test = que solo ve la pagina de inicio y el listado
+testAdmin tiene acceso a inicio, listado, nuevo formulario de contacot 
     
     *Se implementa formulario en el login con 
         Formularios reactivos
@@ -20,20 +20,7 @@ testAdmin tiene acceso al detalle del pokemos
     
     *Se implementar guards, para conocer si ya cuenta con sesion iniciar o tiene permiso para acceder al modulo
 
-    *Se utliza el api de pokemon se obtiene el listado se pinta y se puede acceder a cada uno de los registros pintados
-
-    *Se utiliza RXJS,
-        take
-        takeUntil
-        DebounceTime
-
     *Se generan modelos para hacer el cast necesario en cada unos de los end-point
-
-    *Se agrega un buscador  que realizar una busqueda a nivel de memoria con la informacion obtenida previamente
-
-    *se agrega un pipe que formatea los nombres una mayuscula y una minuscula intercalandolas
-
-    *se agrega una directiva que cambia el nombre del pokemon a azul si comienza con alguna vocal
 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
