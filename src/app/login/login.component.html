@@ -1,0 +1,26 @@
+<body>
+    <div class="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form  [formGroup]="loginForm" (submit)="onSumbit()">
+            <div class="col-12">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" formControlName="user" required class="form-control">
+                <section *ngIf="loginForm.get('user')?.dirty">
+                    <span *ngIf="loginForm.get('user')?.hasError('required')" class="help-label help-label__error">Este campo es requerido</span>
+                    <span *ngIf="loginForm.get('user')?.hasError('minlength')" class="help-label help-label__error">Este campo debe contener minimo 4 caracteres</span>
+                </section>
+            </div>
+            <div class="col-12">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" formControlName="password"  required class="form-control">
+                <section *ngIf="loginForm.get('password')?.dirty">
+                    <span *ngIf="loginForm.get('password')?.hasError('required')" class="help-label help-label__error">Este campo es requerido</span>
+                    <span *ngIf="loginForm.get('password')?.hasError('minlength')" class="help-label help-label__error">Este campo debe contener minimo 4 caracteres</span>
+                </section>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid || isSumbit">Entrar</button>
+            <span *ngIf="isSumbit" class="help-label">Verificando informacion</span>
+            <span *ngIf="hasError" class="help-label help-label__error">Usuario o contrasena no encontrados</span>
+        </form>
+    </div>
+</body>

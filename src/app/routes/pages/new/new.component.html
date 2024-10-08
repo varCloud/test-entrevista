@@ -1,0 +1,68 @@
+<div class="container mt-5" *ngIf="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Name -->
+      <div class="form-group mb-3">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" formControlName="name" class="form-control" [ngClass]="{'is-invalid': form.get('name')?.invalid && form.get('name')?.touched}">
+        <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="invalid-feedback">
+         El nombre solo puede contener letras.
+        </div>
+      </div>
+  
+      <!-- Description -->
+      <div class="form-group mb-3">
+        <label for="description">Descripcion</label>
+        <textarea id="description" formControlName="description" class="form-control" rows="3" [ngClass]="{'is-invalid': form.get('description')?.invalid && form.get('description')?.touched}" [maxlength]="255" ></textarea>
+        <span>{{form.get('description')?.value.length ?? 0}}/255</span>
+        <div *ngIf="form.get('description')?.invalid && form.get('description')?.touched" class="invalid-feedback" >
+          La descripcion necesita un minimo de 15 caracteres
+        </div>
+      </div>
+  
+      <!-- Hard Drive Capacity -->
+      <div class="form-group mb-3">
+        <label for="hardDriveCapacity">Capacidad del disco duro (GB)</label>
+        <input type="text" id="hardDriveCapacity" formControlName="hardDriveCapacity" class="form-control" [ngClass]="{'is-invalid': form.get('hardDriveCapacity')?.invalid && form.get('hardDriveCapacity')?.touched}">
+        <div *ngIf="form.get('hardDriveCapacity')?.invalid && form.get('hardDriveCapacity')?.touched" class="invalid-feedback">
+         Este campo solo admite digitos
+        </div>
+      </div>
+  
+      <!-- RAM -->
+      <div class="form-group mb-3">
+        <label for="ram">RAM (GB)</label>
+        <input type="text" id="ram" formControlName="ram" class="form-control" [ngClass]="{'is-invalid': form.get('ram')?.invalid && form.get('ram')?.touched}">
+        <div *ngIf="form.get('ram')?.invalid && form.get('ram')?.touched" class="invalid-feedback">
+            Este campo solo admite digitos
+        </div>
+      </div>
+  
+      <!-- Operating System -->
+      <div class="form-group mb-3">
+        <label for="operatingSystem">Sistema Operativo</label>
+        <input type="text" id="operatingSystem" formControlName="operatingSystem" class="form-control" [ngClass]="{'is-invalid': form.get('operatingSystem')?.invalid && form.get('operatingSystem')?.touched}">
+        <div *ngIf="form.get('operatingSystem')?.invalid && form.get('operatingSystem')?.touched" class="invalid-feedback">
+            El sistema operativo solo puede contener letras.
+        </div>
+      </div>
+  
+      <!-- Model -->
+      <div class="form-group mb-3">
+        <label for="model">Model</label>
+        <input type="text" id="model" formControlName="model" class="form-control" [ngClass]="{'is-invalid': form.get('model')?.invalid && form.get('model')?.touched}">
+        <div *ngIf="form.get('model')?.invalid && form.get('model')?.touched" class="invalid-feedback">
+            El modelo puede contener numeros y letras.
+        </div>
+      </div>
+      <div class="align-items-center d-flex flex flex-row justify-content-between">
+        <div class="container-buttons-actions d-flex gap-4">
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid"> Guardar </button>
+            <button type="submit" class="btn btn-secondary" (click)="onReset()"> Limpiar </button>
+        </div>
+        <div class="container-buttons-cancel">
+            <button type="submit" class="btn btn-danger" (click)="onCancelar()"> Cancelar </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

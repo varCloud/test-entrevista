@@ -1,0 +1,65 @@
+
+.mobile-label{
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .mobile-label{
+    display: flex;
+  }
+  .mat-mdc-table {
+    border: 0;
+    vertical-align: middle
+  }
+
+  .mat-mdc-table caption {
+    font-size: 1em;
+  }
+  
+
+  .mat-mdc-table .mat-mdc-header-cell {
+    display: none;
+  }
+
+  .mat-mdc-header-row{
+    display: none;
+  }
+  
+  .mat-mdc-table .mat-mdc-row {
+    border-bottom: 5px solid #ddd;
+    display: block;
+    padding: 5px;
+  }
+  /*
+  .mat-mdc-table .mat-mdc-row:nth-child(even) {background: #CCC}
+  .mat-mdc-table .mat-mdc-row:nth-child(odd) {background: #FFF}
+  */
+  .mat-mdc-table .mat-mdc-cell  {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    font-size: 1em;
+    text-align: right;
+    height:30px;
+    margin-bottom: 4%;
+    .mobile-label{
+      font-weight: 600;
+    }
+  }
+  .mat-mdc-table .mat-mdc-cell:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: .85em;
+  }
+  .mat-mdc-table .mat-mdc-cell:last-child {
+    border-bottom: 0;
+  }
+    .mat-mdc-table .mat-mdc-cell:first-child {
+    margin-top: 4%;
+  }
+}

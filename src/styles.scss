@@ -1,0 +1,15 @@
+//App styles
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'ngx-toastr/toastr';
+// @import "./scss/color";
+// @import "./scss/buttons";
+// @import "./scss/inputs";
+// @import "./scss/helpers.scss";
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

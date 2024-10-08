@@ -1,0 +1,96 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+/.angular
+# Dependencies
+/node_modules
+
+# Cordova
+/www
+/plugins
+/platforms
+
+# Electron
+/dist-electron
+/dist-packages
+/electron.main.js
+
+# IDEs and editors
+.idea/*
+!.idea/runConfigurations/
+!.idea/codeStyleSettings.xml
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+xcuserdata/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Maven
+/target
+/log
+
+# Misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+/reports
+/src/translations/template.*
+# /src/environments/.env.*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Created by https://www.toptal.com/developers/gitignore/api/angular
+# Edit at https://www.toptal.com/developers/gitignore?templates=angular
+
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+
+# dependencies
+node_modules/
+bower_components/
+
+# IDEs and editors
+.idea/
+
+# misc
+.sass-cache/
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
+.angular/
+
+# e2e
+e2e/*.js
+e2e/*.map
+
+# System Files
+.DS_Store/
+
+# End of https://www.toptal.com/developers/gitignore/api/angular

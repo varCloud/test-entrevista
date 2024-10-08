@@ -1,0 +1,90 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="computers" >
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <span class="mobile-label">Id:</span>
+          {{element.id}} 
+        </mat-cell>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <span class="mobile-label">Nombre:&nbsp; </span>
+          {{element.name}} 
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <span class="mobile-label">Descripcion:&nbsp; </span>
+          {{element.description}} 
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="hardDriveCapacity">
+        <mat-header-cell *matHeaderCellDef> Disco Duro </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <span class="mobile-label">Disco Duro:&nbsp; </span>
+          {{element.hardDriveCapacity}} 
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="ram">
+        <mat-header-cell *matHeaderCellDef> Ram </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <span class="mobile-label">Ram:&nbsp; </span>
+          {{element.ram}} 
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="operatingSystem">
+        <mat-header-cell *matHeaderCellDef> Sistema operativo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <span class="mobile-label">Sistema operativo:&nbsp; </span>
+          {{element.operatingSystem}} 
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="model">
+        <mat-header-cell *matHeaderCellDef> Modelo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <span class="mobile-label">Modelo:&nbsp; </span>
+          {{element.model}} 
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container [matColumnDef]="'menu'" stickyEnd>
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let item">
+          <button mat-icon-button [matMenuTriggerFor]="menu" [matMenuTriggerData]="{item}">
+              <mat-icon>more_vert</mat-icon>
+          </button>
+       </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  
+  
+
+  <mat-menu #menu="matMenu">
+    <ng-template matMenuContent let-item="item">
+        <button mat-menu-item (click)="onEditar(item)">
+            <mat-icon class="mat-icon-h">edit</mat-icon>
+            <span>Editar</span>
+        </button>
+        <button mat-menu-item (click)="onEliminar(item)">
+            <mat-icon class="mat-icon-h">delete</mat-icon>
+            <span>Eliminar</span>
+        </button>
+    </ng-template>
+</mat-menu>

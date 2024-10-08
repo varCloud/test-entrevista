@@ -1,0 +1,43 @@
+$input-padding: 10px 15px;
+$input-border-radius: 5px;
+$input-border-color: #ccc;
+$input-focus-border-color: var(--tr-primary-color);
+$input-background-color: #f9f9f9;
+$input-text-color: #333;
+$input-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+$input-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+  padding: $input-padding;
+  border: 2px solid $input-border-color;
+  border-radius: $input-border-radius;
+  background-color: $input-background-color;
+  color: $input-text-color;
+  font-size: 16px;
+  outline: none;
+  box-shadow: $input-box-shadow;
+  transition: $input-transition;
+
+  &:focus {
+    border-color: $input-focus-border-color;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  &::placeholder {
+    color: lighten($input-text-color, 30%);
+  }
+
+  &:hover {
+    border-color: darken($input-border-color, 10%);
+  }
+
+  &:disabled {
+    background-color: lighten($input-background-color, 20%);
+    border-color: $input-border-color;
+    color: lighten($input-text-color, 50%);
+    cursor: not-allowed;
+  }
+}
